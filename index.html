@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BLD | AI Retail Transformation | Fix Revenue, Margin and Customer Leakage</title>
+<meta content="We fix the commercial problems that cost retailers revenue, margin and customers. AI retail transformation built on 20 years of operating retail from the inside. Adidas, BIBA, Coca Cola, GSK, Timex." name="description"/>
+<style>
+:root {
+  --navy: #06263d;
+  --navy2: #082f49;
+  --blue: #1565c0;
+  --blue2: #0f75bc;
+  --sky: #e8f3ff;
+  --ice: #f7fbff;
+  --teal: #00a884;
+  --teal-light: #e1f5ee;
+  --gold: #c9a227;
+  --ink: #102a43;
+  --muted: #5d6f82;
+  --line: #dce8f6;
+  --white: #ffffff;
+  --shadow: 0 12px 36px rgba(6,38,61,0.09);
+  --radius: 16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid #e5edf7;backdrop-filter:blur(12px)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;color:var(--navy);font-size:15px;white-space:nowrap}
+.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px}
+.nav-links a{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted)}
+.nav-links a:hover{color:var(--blue)}
+.nav-wa{background:#25d366;color:#fff !important;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:800}
+.nav-wa:hover{background:#1ebe5d}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#0d3d6e 60%,#1565c0 100%);color:#fff;padding:88px 22px 72px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(0,168,132,0.18) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;margin-bottom:20px;color:#d8ecff}
+.hero h1{font-size:clamp(34px,4.8vw,58px);line-height:1.07;letter-spacing:-0.04em;margin-bottom:18px;font-weight:800}
+.hero h1 span{color:#5DCAA5}
+.hero-sub{font-size:18px;color:#d0e9ff;margin-bottom:14px;max-width:640px;line-height:1.55}
+.hero-copy{font-size:15px;color:#b8d9f4;max-width:620px;margin-bottom:28px;line-height:1.7}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:800;border:1.5px solid transparent;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.88}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-wa{background:#25d366;color:#fff;border-color:#25d366}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,0.7)}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px}
+.hbadge{background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.22);color:#e8f3ff;font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px}
+
+/* HERO PANEL */
+.hero-panel{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:22px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.22)}
+.hero-panel-inner{background:#fff;color:var(--ink);border-radius:16px;padding:22px}
+.panel-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.panel-sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.metric{background:var(--ice);border:1px solid var(--line);border-radius:12px;padding:12px}
+.metric strong{display:block;color:var(--blue);font-size:22px;line-height:1;margin-bottom:3px}
+.metric span{font-size:11px;color:var(--muted);line-height:1.35}
+
+/* BRAND STRIP */
+.brand-strip{background:var(--navy);padding:22px 22px;overflow:hidden}
+.brand-strip-inner{max-width:1160px;margin:0 auto}
+.strip-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;text-align:center}
+.brand-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 14px}
+.brand-chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;letter-spacing:0.03em}
+
+/* SECTIONS */
+section{padding:72px 22px}
+.section-soft{background:var(--ice)}
+.section-inner{max-width:1160px;margin:0 auto}
+.kicker{color:var(--teal);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.11em;margin-bottom:9px}
+.sec-title{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px}
+.sec-sub{color:var(--muted);font-size:15px;max-width:780px;margin-bottom:36px;line-height:1.65}
+
+/* PROBLEM BANNER */
+.problem-bar{background:#fff8e1;border:1px solid #f0d060;border-radius:14px;padding:22px 28px;margin-bottom:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.problem-item{display:flex;align-items:flex-start;gap:10px}
+.prob-icon{width:34px;height:34px;border-radius:8px;background:#fff;border:1px solid #f0d060;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.prob-text{font-size:13px;color:var(--ink);font-weight:600;line-height:1.4}
+.prob-desc{font-size:12px;color:var(--muted);margin-top:2px;font-weight:400}
+
+/* OUTCOMES */
+.outcome-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.outcome-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.oc-num{font-size:38px;font-weight:800;line-height:1;margin-bottom:6px}
+.oc-num.green{color:var(--teal)}
+.oc-num.blue{color:var(--blue)}
+.oc-num.gold{color:#c9a227}
+.oc-title{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.oc-body{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* SOLUTIONS — grouped by problem */
+.sol-group{margin-bottom:40px}
+.sol-group-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sol-group-icon{width:38px;height:38px;border-radius:10px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.sol-group-title{font-size:17px;font-weight:800;color:var(--navy)}
+.sol-group-sub{font-size:13px;color:var(--muted)}
+.sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.sol-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.sol-card-top{background:linear-gradient(135deg,var(--navy),var(--blue));min-height:80px;padding:18px;display:flex;align-items:flex-end}
+.sol-card-top .tagline{color:#9be7d8;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.07em}
+.sol-card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.sol-card-body h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:7px}
+.sol-card-body p{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6}
+.impact-list{list-style:none;padding:0;margin:0 0 14px}
+.impact-list li{font-size:13px;color:var(--ink);padding:4px 0 4px 20px;position:relative;line-height:1.4}
+.impact-list li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:900}
+.sol-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.sol-btn{font-size:12px;font-weight:800;padding:8px 13px;border-radius:999px;border:1.5px solid var(--blue);color:var(--blue);background:#fff}
+.sol-btn.primary{background:var(--blue);color:#fff}
+.video-box{margin:4px 0 14px;border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.video-box video{width:100%;display:block}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.testi-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);position:relative}
+.testi-card::before{content:'\201C';position:absolute;top:14px;left:20px;font-size:52px;color:var(--teal);line-height:1;font-family:Georgia,serif;opacity:.35}
+.testi-body{font-size:14px;color:var(--ink);line-height:1.7;padding-top:22px;margin-bottom:18px;font-style:italic}
+.testi-person{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--blue);flex-shrink:0}
+.testi-name{font-size:13px;font-weight:800;color:var(--navy)}
+.testi-role{font-size:12px;color:var(--muted)}
+
+/* PROOF STRIP */
+.proof-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:36px}
+.proof-card{background:var(--navy);color:#fff;border-radius:14px;padding:18px}
+.proof-card strong{display:block;font-size:26px;margin-bottom:4px}
+.proof-card span{color:#c8e4ff;font-size:12px;line-height:1.4}
+
+/* METHOD */
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.method-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.method-step{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.09em;color:var(--teal);margin-bottom:8px}
+.method-card h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.method-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* DEMO SECTION */
+.demo-section{background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+.demo-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
+.demo-copy h2{font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:16px;letter-spacing:-0.02em}
+.demo-copy p{color:var(--muted);font-size:15px;margin-bottom:22px;line-height:1.65}
+.demo-points{list-style:none;padding:0;margin:0 0 28px}
+.demo-points li{padding:9px 0 9px 26px;position:relative;font-size:14px;color:var(--ink);border-bottom:1px solid var(--line)}
+.demo-points li:last-child{border-bottom:none}
+.demo-points li::before{content:'✓';position:absolute;left:0;top:9px;color:var(--teal);font-weight:900}
+.demo-form-wrap{background:var(--navy);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.form-kicker{color:#9be7d8;font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;margin-bottom:8px}
+.demo-form-wrap h3{font-size:26px;font-weight:800;color:#fff;margin-bottom:20px}
+.demo-form{display:grid;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field label{display:block;font-size:12px;font-weight:700;color:#d8ecff;margin-bottom:6px}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:11px 12px;font:inherit;font-size:14px;background:#fff;color:var(--ink);outline:none}
+.form-field textarea{min-height:90px;resize:vertical}
+.form-submit{background:#25d366;color:#fff;border:none;border-radius:9px;padding:14px 22px;font-size:15px;font-weight:800;cursor:pointer;width:100%}
+.form-submit:hover{background:#1ebe5d}
+.form-note{font-size:11px;color:rgba(255,255,255,0.45);margin-top:10px;text-align:center}
+
+/* PROOF numbers under demo copy */
+.demo-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:4px}
+.dp-item{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px;box-shadow:0 4px 14px rgba(6,38,61,0.06)}
+.dp-item strong{display:block;color:var(--navy);font-size:20px;font-weight:800;margin-bottom:3px}
+.dp-item span{font-size:11px;color:var(--muted);line-height:1.4}
+
+/* CASE STUDIES */
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.case-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.case-top{background:linear-gradient(135deg,var(--navy),var(--blue2));min-height:70px;padding:16px;display:flex;align-items:flex-end}
+.case-tagline{color:#9be7d8;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.06em}
+.case-body{padding:18px}
+.case-body h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:7px}
+.case-body p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.case-btns{display:flex;flex-wrap:wrap;gap:8px}
+.case-btn{font-size:12px;font-weight:800;padding:7px 13px;border-radius:999px;border:1.5px solid var(--blue);color:var(--blue);background:#fff}
+.case-btn.primary{background:var(--blue);color:#fff}
+
+/* CONTACT */
+.contact-wrap{background:linear-gradient(135deg,var(--navy),#0d3d6e);border-radius:24px;padding:38px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;box-shadow:var(--shadow)}
+.contact-wrap h2{font-size:clamp(26px,3vw,38px);font-weight:800;line-height:1.12;margin-bottom:12px;letter-spacing:-0.02em}
+.contact-wrap p{color:#c8e4ff;font-size:15px;line-height:1.65}
+.contact-list{display:grid;gap:13px}
+.contact-item{display:flex;align-items:center;gap:12px;font-size:14px}
+.contact-icon{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.contact-item a{color:#fff;font-weight:700}
+.contact-item a:hover{text-decoration:underline}
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,0.45);transition:transform .15s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.wa-float:hover .wa-tooltip{opacity:1}
+
+/* TABS */
+.tab-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;border-bottom:2px solid var(--line);padding-bottom:0}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;padding:10px 18px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;border-radius:8px 8px 0 0;transition:color .15s,border-color .15s}
+.tab-btn:hover{color:var(--navy);background:var(--sky)}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue);background:var(--sky)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:var(--muted);font-size:12px}
+
+@media(max-width:960px){
+  .hero-inner,.contact-wrap,.demo-grid{grid-template-columns:1fr}
+  .outcome-grid{grid-template-columns:1fr 1fr}
+  .hero{padding:68px 18px 56px}
+}
+@media(max-width:640px){
+  .nav-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav-links{justify-content:flex-start;gap:10px}
+  .outcome-grid,.form-row,.demo-proof{grid-template-columns:1fr}
+  section{padding:52px 18px}
+  .contact-wrap{padding:26px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank" aria-label="Chat on WhatsApp">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="brand">BLD</div>
+    <div class="nav-links">
+      <a href="#solutions">Space</a>
+      <a href="#solutions">Inventory</a>
+      <a href="#solutions">Sales</a>
+      <a href="#solutions">Customer</a>
+      <a href="#request-demo">Get Demo</a>
+      <a class="nav-wa" href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank">WhatsApp Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">AI Retail Transformation &middot; 20 Years Operating Retail</div>
+      <h1>We fix what costs retailers <span>revenue, margin</span> and customers.</h1>
+      <p class="hero-sub">Wrong stock. Late markdowns. Missed retention. Unmeasured campaigns. We build AI systems that stop that leakage, backed by 20 years of operating inside the brands you know.</p>
+      <p class="hero-copy">Adidas &middot; BIBA &middot; Coca Cola &middot; PepsiCo &middot; GSK &middot; Titan &middot; Timex &middot; Tom Tailor &middot; Lavie &middot; Recron</p>
+      <div class="hero-btns">
+        <a class="btn btn-white" href="#request-demo">Request a Demo</a>
+        <a class="btn btn-wa" href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Now
+        </a>
+        <a class="btn btn-ghost" href="#solutions">See AI Solutions</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hbadge">Inventory Optimisation</span>
+        <span class="hbadge">Customer Retention &amp; CLV</span>
+        <span class="hbadge">Margin Protection</span>
+        <span class="hbadge">Marketing ROI</span>
+        <span class="hbadge">GMROI &amp; Sell-Through</span>
+        <span class="hbadge">AI Automation</span>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Impact snapshot">
+      <div class="hero-panel-inner">
+        <div class="panel-title">Commercial impact snapshot</div>
+        <div class="panel-sub">Real results from 20+ years of retail, merchandising and AI analytics.</div>
+        <div class="metric-grid">
+          <div class="metric"><strong>7,500+</strong><span>Retail touchpoints managed across rollouts</span></div>
+          <div class="metric"><strong>95%</strong><span>Brand compliance achieved vs 85% industry avg</span></div>
+          <div class="metric"><strong>25%</strong><span>Forecasting accuracy improvement via AI</span></div>
+          <div class="metric"><strong>40%</strong><span>Reduction in manual reporting effort</span></div>
+          <div class="metric"><strong>22%</strong><span>Shopper dwell time uplift in store activation</span></div>
+          <div class="metric"><strong>15%</strong><span>Field cost reduction from smarter deployment</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <div class="strip-label">Brands and businesses we have worked with</div>
+    <div class="brand-logos">
+      <span class="brand-chip">Adidas</span>
+      <span class="brand-chip">BIBA</span>
+      <span class="brand-chip">Coca Cola</span>
+      <span class="brand-chip">PepsiCo</span>
+      <span class="brand-chip">GSK</span>
+      <span class="brand-chip">Titan</span>
+      <span class="brand-chip">Timex</span>
+      <span class="brand-chip">Tom Tailor</span>
+      <span class="brand-chip">Lavie</span>
+      <span class="brand-chip">Recron &middot; RIL</span>
+      <span class="brand-chip">Bira 91</span>
+      <span class="brand-chip">Diet Foods</span>
+      <span class="brand-chip">Lyla</span>
+      <span class="brand-chip">Loom Tree</span>
+      <span class="brand-chip">Stride &middot; Arvind</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMS WE SOLVE -->
+<section id="problems">
+  <div class="section-inner">
+    <p class="kicker">Commercial problems we solve</p>
+    <h2 class="sec-title">Where is your retail business losing money right now?</h2>
+    <p class="sec-sub">Select the problem that fits your business. Every solution below is built around one of these leakage points.</p>
+    <div class="problem-bar">
+      <div class="problem-item">
+        <div class="prob-icon">🏪</div>
+        <div><div class="prob-text">Space Optimisation</div><div class="prob-desc">Shelf productivity, planograms, perishable waste, space that earns its place.</div></div>
+      </div>
+      <div class="problem-item">
+        <div class="prob-icon">📦</div>
+        <div><div class="prob-text">Inventory Management</div><div class="prob-desc">Wrong stock, stockouts, deadstock, GMROI and replenishment decisions.</div></div>
+      </div>
+      <div class="problem-item">
+        <div class="prob-icon">📈</div>
+        <div><div class="prob-text">Sales Analysis</div><div class="prob-desc">Why sales dropped, which store, which SKU, which action to take next.</div></div>
+      </div>
+      <div class="problem-item">
+        <div class="prob-icon">👥</div>
+        <div><div class="prob-text">Customer</div><div class="prob-desc">Churn, CLV, NPS, retention, returns and discount targeting.</div></div>
+      </div>
+    </div>
+
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="oc-num green">Revenue+</div>
+        <div class="oc-title">Grow revenue and retention</div>
+        <div class="oc-body">Higher sell-through, sharper promotions, better conversion and customer retention strategies that compound CLV and NPS over time.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-num blue">Cost&darr;</div>
+        <div class="oc-title">Reduce cost and manual effort</div>
+        <div class="oc-body">Automated workflows cut reporting hours by 40%. Smarter inventory deployment reduced field costs by 15% in live operations.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-num gold">Margin&uarr;</div>
+        <div class="oc-title">Protect profit and margin</div>
+        <div class="oc-body">Pricing intelligence, markdown optimisation and discount controls that protect gross margin and lift overall profitability.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS: 4 practice areas -->
+<section class="section-soft" id="solutions">
+  <div class="section-inner">
+    <p class="kicker">Our four practice areas</p>
+    <h2 class="sec-title">Where we work. What we fix.</h2>
+    <p class="sec-sub">Every system we build sits inside one of these four areas. Each one is built to produce a clear commercial action for owners, buyers, category heads and retail teams.</p>
+
+    <!-- TAB NAV -->
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="space" role="tab" aria-selected="true">🏪 Space Optimisation</button>
+      <button class="tab-btn" data-tab="inventory" role="tab" aria-selected="false">📦 Inventory Management</button>
+      <button class="tab-btn" data-tab="sales" role="tab" aria-selected="false">📈 Sales Analysis</button>
+      <button class="tab-btn" data-tab="customer" role="tab" aria-selected="false">👥 Customer</button>
+    </div>
+
+    <!-- GROUP 1: SPACE OPTIMISATION -->
+    <div class="sol-group tab-panel active" id="tab-space">
+      <div class="sol-group-header">
+        <div class="sol-group-icon">🏪</div>
+        <div>
+          <div class="sol-group-title">Space Optimisation</div>
+          <div class="sol-group-sub">Every square foot of your store should earn its place. We build AI systems that show which space is performing, which is wasting margin and what needs to change.</div>
+        </div>
+      </div>
+      <div class="sol-grid">
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Planogram &middot; Shelf Productivity &middot; Store Layout</span></div>
+          <div class="sol-card-body">
+            <h3>Space Optimiser</h3>
+            <p>Connects sales, category role, shopper journey and shelf allocation to improve sell-through and store profitability. Identifies and fixes underperforming space before it compounds into lost margin.</p>
+            <ul class="impact-list">
+              <li>Improve revenue per square foot</li>
+              <li>Support planogram and adjacency decisions</li>
+              <li>Find space that is costing you money</li>
+              <li>Connect shelf position to category sell-through</li>
+            </ul>
+            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/space%20optimiser.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://spaceoptimiser.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Perishable &middot; Shelf Rotation &middot; Waste Reduction</span></div>
+          <div class="sol-card-body">
+            <h3>Juice Pro</h3>
+            <p>Shelf and pack productivity system for fresh and perishable categories. Shows which flavour, size and shelf position deserves more space, less space or faster action before expiry hits margin.</p>
+            <ul class="impact-list">
+              <li>Reduce expiry-driven waste and write-offs</li>
+              <li>Improve markdown timing on perishables</li>
+              <li>Protect margin in high-turnover categories</li>
+              <li>Identify which SKUs are occupying space without earning it</li>
+            </ul>
+            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Forecasting &middot; Expiry Risk &middot; Markdown Triggers</span></div>
+          <div class="sol-card-body">
+            <h3>PerishIQ</h3>
+            <p>AI solution for perishable inventory forecasting, expiry risk scoring and dynamic markdown triggers. Stops fresh category losses before they reach end-of-day write-off.</p>
+            <ul class="impact-list">
+              <li>Predict expiry risk days ahead, not hours</li>
+              <li>Trigger markdowns at the right time to protect margin</li>
+              <li>Improve replenishment decisions for fresh categories</li>
+              <li>Reduce food waste and reverse logistics cost</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://praachee19.github.io/PDF/PerishIQ.pdf" target="_blank" rel="noopener">View Demo PDF</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- GROUP 2: INVENTORY MANAGEMENT -->
+    <div class="sol-group tab-panel" id="tab-inventory" style="display:none">
+      <div class="sol-group-header">
+        <div class="sol-group-icon">📦</div>
+        <div>
+          <div class="sol-group-title">Inventory Management</div>
+          <div class="sol-group-sub">Wrong stock is one of the fastest ways retail businesses lose money. Too much of the wrong product locks cash. Too little of the right product loses sales. We build AI systems that fix both.</div>
+        </div>
+      </div>
+      <div class="sol-grid">
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">GMROI &middot; Assortment &middot; Category Intelligence</span></div>
+          <div class="sol-card-body">
+            <h3>RetailMind AI</h3>
+            <p>Retail intelligence system that shows where stock is creating profit, where it is blocking cash and which assortment actions improve GMROI, sell-through and category performance.</p>
+            <ul class="impact-list">
+              <li>Identify low-productivity stock before it becomes deadstock</li>
+              <li>Improve GMROI across categories</li>
+              <li>Support assortment and range planning decisions</li>
+              <li>Show which categories deserve more investment</li>
+            </ul>
+            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/retail_mind_ai.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/retail_mind_ai.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Stock Alerts &middot; Replenishment &middot; Automation</span></div>
+          <div class="sol-card-body">
+            <h3>Inventory Alert Engine</h3>
+            <p>Automated stock monitoring that flags low stock, stockout risk and inventory action points for category and store teams. Replaces manual stock checking entirely.</p>
+            <ul class="impact-list">
+              <li>Reduce lost sales from stockouts before they happen</li>
+              <li>Cut replenishment response time significantly</li>
+              <li>Zero manual stock monitoring effort</li>
+              <li>Live alerts by store, category and SKU</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://retailinventoryalertexplainableai.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Retail Automation &middot; KPI Tracking &middot; Efficiency</span></div>
+          <div class="sol-card-body">
+            <h3>Retail Dashboard Automation</h3>
+            <p>Automated inventory and KPI dashboards with live data feeds. Replaces manual Excel tracking entirely and cuts reporting time by 40%, giving store and buying teams real-time visibility.</p>
+            <ul class="impact-list">
+              <li>Live stock, sell-through and SKU visibility</li>
+              <li>40% reduction in manual reporting time</li>
+              <li>Built for buyers and operations teams</li>
+              <li>Flags inventory anomalies automatically</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://retailsalesautomation.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- GROUP 3: SALES ANALYSIS -->
+    <div class="sol-group tab-panel" id="tab-sales" style="display:none">
+      <div class="sol-group-header">
+        <div class="sol-group-icon">📈</div>
+        <div>
+          <div class="sol-group-title">Sales Analysis</div>
+          <div class="sol-group-sub">Most retail businesses are not short of sales data. They are short of the ability to act on it at the right time. We build AI systems that turn sales data into clear decisions for owners, buyers and leadership teams.</div>
+        </div>
+      </div>
+      <div class="sol-grid">
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Sales Chatbot &middot; Historical Analysis &middot; Actions</span></div>
+          <div class="sol-card-body">
+            <h3>Sales Deep Dive AI</h3>
+            <p>Chat-based sales analysis trained on your data. Ask why sales dropped, which store caused the decline and which category needs action. Answers in plain English, no dashboards, no Excel.</p>
+            <ul class="impact-list">
+              <li>Ask any sales question and get an instant answer</li>
+              <li>Compare store, SKU, category and time periods via chat</li>
+              <li>Turn weekly review meetings into sharp action points</li>
+              <li>Identify which category or store is causing a problem</li>
+            </ul>
+            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/sales_deep_dive_ai.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/sales_deep_dive_ai.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">AI Agent &middot; Plain English &middot; Business Q&amp;A</span></div>
+          <div class="sol-card-body">
+            <h3>RetailAgent AI</h3>
+            <p>AI retail assistant that answers business questions instantly, explains performance movement and surfaces recommended actions for store, category and buying teams.</p>
+            <ul class="impact-list">
+              <li>Instant answers without opening reports or spreadsheets</li>
+              <li>Reduce manual analysis dependency for retail teams</li>
+              <li>Faster decisions across stores, products and categories</li>
+              <li>Available for owners, buyers and store managers</li>
+            </ul>
+            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/retail%20agent.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/retail%20agent.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">KPI Narrative &middot; Risk Flags &middot; Exec Summaries</span></div>
+          <div class="sol-card-body">
+            <h3>Insight Engine</h3>
+            <p>AI-powered KPI interpreter that reads business metrics and produces plain English insights, risk flags and decision recommendations. Reduces the time leadership spends interpreting data every week.</p>
+            <ul class="impact-list">
+              <li>Converts KPI movement into clear action summaries</li>
+              <li>Flags risks before they become commercial problems</li>
+              <li>Reduces weekly review time for leadership teams</li>
+              <li>Built for owners and category heads, not analysts</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://demandengineagent.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Conversion Funnel &middot; Drop-offs &middot; Campaign ROI</span></div>
+          <div class="sol-card-body">
+            <h3>Funnel IQ</h3>
+            <p>Shows where prospects and shoppers drop in the sales funnel, which stage is leaking revenue and which campaign action improves conversion fastest.</p>
+            <ul class="impact-list">
+              <li>See exactly where your funnel is losing money</li>
+              <li>Improve campaign conversion tracking</li>
+              <li>Connect marketing spend to revenue outcomes</li>
+              <li>Faster decisions for marketing and growth teams</li>
+            </ul>
+            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- GROUP 4: CUSTOMER -->
+    <div class="sol-group tab-panel" id="tab-customer" style="display:none">
+      <div class="sol-group-header">
+        <div class="sol-group-icon">👥</div>
+        <div>
+          <div class="sol-group-title">Customer</div>
+          <div class="sol-group-sub">Acquiring a customer costs five times more than keeping one. We build AI systems that identify at-risk customers, grow CLV, improve NPS and protect repeat revenue before it walks out.</div>
+        </div>
+      </div>
+      <div class="sol-grid">
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Churn Risk &middot; CLV &middot; Win-Back Priority</span></div>
+          <div class="sol-card-body">
+            <h3>Retention Engine</h3>
+            <p>Identifies which customers are at risk, why they are slipping and what action should happen first. Turns retention from late win-back into early profit protection.</p>
+            <ul class="impact-list">
+              <li>Prioritise high-value customers before they leave</li>
+              <li>Separate customers worth saving from discount-only responders</li>
+              <li>Show churn drivers by spend, recency and frequency</li>
+              <li>Trigger the right retention action at the right time</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://bank-churn-rfm-clv.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Promotion Depth &middot; Margin Protection &middot; Elasticity</span></div>
+          <div class="sol-card-body">
+            <h3>Discount Engine</h3>
+            <p>Recommends discount depth, timing and customer targeting so margin is protected while sales targets are met. Stops blanket discounting that trains customers to wait for sales.</p>
+            <ul class="impact-list">
+              <li>Reduce unnecessary blanket discounts across customer base</li>
+              <li>Protect gross margin during promotions</li>
+              <li>Target the right discount to the right customer segment</li>
+              <li>Improve promotion ROI without sacrificing volume</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Returns &middot; Quality Signals &middot; Margin Leakage</span></div>
+          <div class="sol-card-body">
+            <h3>Return Engine</h3>
+            <p>Identifies why products come back, which categories cause margin leakage and what action reduces avoidable returns. Stops return patterns from quietly eroding profitability.</p>
+            <ul class="impact-list">
+              <li>Detect return patterns by product, store and customer segment</li>
+              <li>Surface fit, quality and expectation mismatch signals</li>
+              <li>Reduce reverse logistics cost and margin leakage</li>
+              <li>Improve NPS by fixing the root cause of returns</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">NLP &middot; Sentiment &middot; Experience Gaps</span></div>
+          <div class="sol-card-body">
+            <h3>Customer Sentiment AI</h3>
+            <p>NLP-powered analysis of customer reviews and feedback that surfaces product quality gaps, sizing issues and experience improvements that lift NPS and repeat purchase.</p>
+            <ul class="impact-list">
+              <li>Analyse thousands of reviews automatically</li>
+              <li>Surface product and experience improvement signals</li>
+              <li>Improve NPS by fixing what customers actually complain about</li>
+              <li>Connect sentiment to category and merchandising decisions</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROOF NUMBERS -->
+<section id="proof">
+  <div class="section-inner">
+    <p class="kicker">Delivered outcomes</p>
+    <h2 class="sec-title">Numbers from real retail operations.</h2>
+    <p class="sec-sub">Every figure below comes from live retail execution across brands, categories and channels, not projections.</p>
+    <div class="proof-strip">
+      <div class="proof-card"><strong>7,500+</strong><span>Retail touchpoints managed across national execution programs</span></div>
+      <div class="proof-card"><strong>95%</strong><span>Brand compliance achieved vs 85 to 90% industry benchmark</span></div>
+      <div class="proof-card"><strong>40%</strong><span>Reduction in manual reporting effort through automation</span></div>
+      <div class="proof-card"><strong>25%</strong><span>Improvement in inventory forecasting accuracy</span></div>
+      <div class="proof-card"><strong>22%</strong><span>Increase in shopper dwell time through store activation analysis</span></div>
+      <div class="proof-card"><strong>15%</strong><span>Field cost reduction from smarter PoSM deployment</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section-soft">
+  <div class="section-inner">
+    <p class="kicker">How we work</p>
+    <h2 class="sec-title">From business problem to working AI system</h2>
+    <p class="sec-sub">A practical method built for retail operators who want results, not technology for its own sake.</p>
+    <div class="method-grid">
+      <article class="method-card">
+        <div class="method-step">Step 01</div>
+        <h3>Frame the commercial problem</h3>
+        <p>Define the decision, the pain, the owner, the metric and the expected action before touching any tool.</p>
+      </article>
+      <article class="method-card">
+        <div class="method-step">Step 02</div>
+        <h3>Audit data and current process</h3>
+        <p>Check your files, dashboards, gaps, manual steps and where your current decision process breaks down.</p>
+      </article>
+      <article class="method-card">
+        <div class="method-step">Step 03</div>
+        <h3>Build the AI solution layer</h3>
+        <p>Create dashboards, models, alerts, apps or AI workflows based on the specific business requirement.</p>
+      </article>
+      <article class="method-card">
+        <div class="method-step">Step 04</div>
+        <h3>Convert insight into action</h3>
+        <p>Package outputs as clear recommendations, risk flags, next best actions and leadership-ready summaries.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO FORM -->
+<section class="demo-section" id="request-demo">
+  <div class="section-inner">
+    <div class="demo-grid">
+      <div class="demo-copy">
+        <p class="kicker">Request a demo</p>
+        <h2>See what an AI system can do with your actual business problem.</h2>
+        <p>Share the problem you want to fix. The demo will show the logic, the business value and the practical next step. No generic presentations.</p>
+        <ul class="demo-points">
+          <li>A focused walkthrough of the solution that fits your specific problem</li>
+          <li>Clear view of inputs needed, outputs produced and decisions it supports</li>
+          <li>Practical discussion on inventory, retention, pricing, marketing or store performance</li>
+          <li>No credit card. No commitment. A working conversation around your business problem.</li>
+        </ul>
+        <div class="demo-proof">
+          <div class="dp-item"><strong>20+ yrs</strong><span>Retail, VM, marketing and AI experience</span></div>
+          <div class="dp-item"><strong>7,500+</strong><span>Retail touchpoints handled across rollouts</span></div>
+          <div class="dp-item"><strong>15 AI systems</strong><span>Built for retail decisions, not dashboards</span></div>
+        </div>
+      </div>
+      <div class="demo-form-wrap">
+        <div class="form-kicker">Start here</div>
+        <h3>Tell us what you want to fix</h3>
+        <form action="https://formsubmit.co/praacheebhargava@gmail.com" class="demo-form" method="POST">
+          <input name="_subject" type="hidden" value="New Retail AI Demo Request from Website"/>
+          <input name="_captcha" type="hidden" value="false"/>
+          <input name="_template" type="hidden" value="table"/>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-name">Your name *</label>
+              <input id="f-name" name="Name" required type="text" placeholder="First name"/>
+            </div>
+            <div class="form-field">
+              <label for="f-wa">WhatsApp or email *</label>
+              <input id="f-wa" name="WhatsApp or Email" required type="text" placeholder="+91 or email"/>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="f-problem">What business problem do you want to fix? *</label>
+            <select id="f-problem" name="Business problem" required>
+              <option value="">Pick the closest match</option>
+              <option>Wrong stock, deadstock or stockouts</option>
+              <option>Late markdowns and margin erosion</option>
+              <option>Customers not returning, low CLV</option>
+              <option>Marketing spend with no measurable return</option>
+              <option>Slow or manual reporting and decisions</option>
+              <option>High product returns hurting margin</option>
+              <option>Weak shelf or space productivity</option>
+              <option>Multiple problems, need a discussion</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-detail">Tell us more (optional)</label>
+            <textarea id="f-detail" name="Detail" placeholder="Your category, number of stores, what you have tried so far..."></textarea>
+          </div>
+          <button class="form-submit" type="submit">Send Demo Request via WhatsApp / Email</button>
+          <div class="form-note">Or reach us directly on WhatsApp: +91 98106 89050</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF OF WORK -->
+<section class="section-soft" id="proof-of-work">
+  <div class="section-inner">
+    <p class="kicker">Proof of work</p>
+    <h2 class="sec-title">Case studies and analytical work</h2>
+    <p class="sec-sub">Technical foundation behind the business solutions, from customer intelligence to revenue visibility and operations analysis.</p>
+    <div class="cases-grid">
+      <article class="case-card">
+        <div class="case-top"><span class="case-tagline">NLP &middot; Reviews &middot; Merchandising Insight</span></div>
+        <div class="case-body">
+          <h3>Customer Sentiment Analysis</h3>
+          <p>Analysed 23k+ women's clothing reviews to surface product quality gaps, sizing issues and merchandising improvements using NLP.</p>
+          <div class="case-btns"><a class="case-btn primary" href="docs/Womens_Clothing_Ecommerce_Reviews_Project.docx" download>Download Case Study</a></div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-top"><span class="case-tagline">Revenue &middot; Product Trends &middot; Customer Value</span></div>
+        <div class="case-body">
+          <h3>Ecommerce Revenue Intelligence</h3>
+          <p>Business intelligence that identifies product trends, customer value, return patterns and revenue opportunities from transactional data.</p>
+          <div class="case-btns"><a class="case-btn primary" href="docs/Ecommerce_Analysis_using_SQL.docx" download>Download Case Study</a></div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-top"><span class="case-tagline">ML &middot; RFM &middot; CLV &middot; Retention</span></div>
+        <div class="case-body">
+          <h3>Customer Churn and Retention Engine</h3>
+          <p>Predicts churn risk and segments customers by value so teams can prioritise retention actions before revenue is lost.</p>
+          <div class="case-btns"><a class="case-btn primary" href="https://bank-churn-rfm-clv.streamlit.app/" target="_blank" rel="noopener">Open Live App</a></div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-top"><span class="case-tagline">Tableau &middot; KPIs &middot; Store Performance</span></div>
+        <div class="case-body">
+          <h3>Retail Sales Dashboard</h3>
+          <p>Interactive Tableau dashboard for product line, store type and sales trend analysis for executive performance reviews.</p>
+          <div class="case-btns"><a class="case-btn primary" href="https://public.tableau.com/views/Productperformance_17606826421970/ProductPerformance" target="_blank" rel="noopener">View Dashboard</a></div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-top"><span class="case-tagline">Experimentation &middot; Conversion &middot; Decision Reporting</span></div>
+        <div class="case-body">
+          <h3>A/B Testing for Conversion</h3>
+          <p>Designed and analysed a landing page experiment to validate conversion lift and deliver clear business recommendations.</p>
+          <div class="case-btns"><a class="case-btn primary" href="#request-demo">Discuss This Approach</a></div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-top"><span class="case-tagline">Forecasting &middot; Freshness &middot; Markdown</span></div>
+        <div class="case-body">
+          <h3>PerishIQ &mdash; Perishable Inventory AI</h3>
+          <p>AI solution for perishable forecasting, expiry risk scoring, dynamic markdown triggers and replenishment recommendations.</p>
+          <div class="case-btns"><a class="case-btn primary" href="https://praachee19.github.io/PDF/PerishIQ.pdf" target="_blank" rel="noopener">View Demo PDF</a><a class="case-btn" href="#request-demo">Request Demo</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-wrap">
+      <div>
+        <h2>Have a retail or business problem worth solving with AI?</h2>
+        <p>Send the business problem, current data sources and the decision you want to improve. We will convert it into a practical AI solution, dashboard, model or alert system.</p>
+      </div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>WhatsApp &middot; <a href="https://wa.me/919810689050" rel="noopener" target="_blank">+91 98106 89050</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>Email &middot; <a href="mailto:praacheebhargava@gmail.com">praacheebhargava@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <div>LinkedIn &middot; <a href="https://www.linkedin.com/in/praacheebhargava" rel="noopener" target="_blank">praacheebhargava</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📊</div>
+          <div>Portfolio &middot; <a href="https://praachee19.github.io/" rel="noopener" target="_blank">praachee19.github.io</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 BLD &middot; AI Retail Transformation &middot; Fixing revenue, margin and customer leakage for retail businesses.
+</footer>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var tab=btn.getAttribute('data-tab');
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';p.classList.remove('active')});
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    var panel=document.getElementById('tab-'+tab);
+    if(panel){panel.style.display='block';panel.classList.add('active')}
+  });
+});
+
+document.querySelectorAll('a[href="#request-demo"]').forEach(function(link){
+  link.addEventListener('click',function(){
+    var sel=document.getElementById('f-problem');
+    var sol=link.getAttribute('data-solution');
+    if(sel&&sol){
+      Array.from(sel.options).forEach(function(o){
+        if(o.text.trim()===sol.trim())sel.value=o.value;
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
