@@ -31,12 +31,18 @@ img,video{max-width:100%}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid #e5edf7;backdrop-filter:blur(12px)}
-.nav-inner{max-width:1160px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-weight:800;color:var(--navy);font-size:15px;white-space:nowrap}
-.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px}
-.nav-links a{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand-wrap{display:flex;flex-direction:column;line-height:1}
+.brand{font-weight:900;color:var(--blue);font-size:22px;white-space:nowrap;display:flex;flex-direction:column;line-height:1.1;letter-spacing:-0.02em}
+.brand-sub{font-size:9px;font-weight:600;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:6px;margin-left:auto}
+.nav-links>a{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);white-space:nowrap;padding:8px 14px;border-radius:6px}
+.nav-links>a:hover{color:var(--blue);background:var(--sky)}
 .nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue);color:#fff !important;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:800}
+.nav-cta:hover{opacity:.88}
 .nav-wa{background:#25d366;color:#fff !important;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:800}
+.nav-mobile-wa{display:none}
 .nav-wa:hover{background:#1ebe5d}
 
 /* HERO */
@@ -68,11 +74,11 @@ img,video{max-width:100%}
 .metric span{font-size:11px;color:var(--muted);line-height:1.35}
 
 /* BRAND STRIP */
-.brand-strip{background:var(--navy);padding:22px 22px;overflow:hidden}
+.brand-strip{background:var(--navy);padding:30px 22px;overflow:hidden}
 .brand-strip-inner{max-width:1160px;margin:0 auto}
-.strip-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;text-align:center}
-.brand-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 14px}
-.brand-chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;letter-spacing:0.03em}
+.strip-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:20px;text-align:center}
+.brand-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 16px}
+.brand-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:15px;font-weight:800;padding:10px 22px;border-radius:999px;letter-spacing:0.02em;box-shadow:0 2px 12px rgba(255,255,255,0.08)}
 
 /* SECTIONS */
 section{padding:72px 22px}
@@ -202,17 +208,77 @@ section{padding:72px 22px}
 
 
 
+
+/* DROPDOWN NAV */
+.nav-dropdown{position:relative;display:inline-block}
+.nav-drop-trigger{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);cursor:pointer;padding:8px 14px;border-radius:6px;display:block}
+.nav-drop-trigger:hover{color:var(--blue);background:var(--sky)}
+.nav-drop-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 36px rgba(6,38,61,0.13);min-width:200px;z-index:200;padding:6px 0}
+.nav-drop-menu a{display:block;padding:10px 18px;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap}
+.nav-drop-menu a:hover{background:var(--sky);color:var(--blue)}
+.nav-dropdown:hover .nav-drop-menu{display:block}
+
+/* HERO AREAS */
+.hero-areas{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:4px;align-items:center}
+.ha-item{font-size:14px;font-weight:700;color:#d0e9ff}
+.ha-sep{color:rgba(255,255,255,0.3);font-size:16px}
+
+/* ABOUT CREDS */
+.about-creds{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.about-creds span{font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px;background:var(--sky);color:var(--blue);border:1px solid var(--line)}
+
+/* AWARD ITEMS */
+.award-item{font-size:13px;color:var(--ink);padding:7px 0;border-bottom:1px solid var(--line);line-height:1.4}
+.award-item:last-child{border-bottom:none}
+
+/* BRAND CHIP — bigger and more visible */
+
+.strip-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:20px;text-align:center}
+
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:start;margin-top:12px}
-.about-copy p{font-size:15px;color:var(--ink);line-height:1.8;margin-bottom:16px}
-.pill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.pill{font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;background:var(--sky);color:var(--blue);border:1px solid var(--line)}
-.about-panel{background:var(--navy);border-radius:var(--radius);padding:28px;color:#fff}
-.about-panel h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:16px}
-.about-panel ul{list-style:none;padding:0;display:grid;gap:10px}
-.about-panel ul li{font-size:13px;color:#c8e4ff;padding-left:20px;position:relative;line-height:1.5}
-.about-panel ul li::before{content:'→';position:absolute;left:0;color:var(--teal);font-weight:900}
+.about-creds{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.about-creds span{font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--sky);color:var(--navy)}
+.about-awards{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.award-item{font-size:13px;color:var(--muted);padding:5px 0;line-height:1.4}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,0.95fr);gap:30px;align-items:start}
+.about-copy{font-size:16px}
+.about-copy p{color:var(--ink);line-height:1.75;margin:0 0 16px}
+.about-copy p:first-child{margin-top:0}
+.pill-list{display:flex;flex-wrap:wrap;gap:9px}
+.pill{border-radius:999px;font-size:12px;font-weight:800;padding:7px 11px;background:var(--sky);color:var(--navy)}
+.about-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.about-panel h3{color:var(--navy);margin:0 0 12px;font-size:18px;font-weight:800}
+.about-panel ul{padding-left:18px;margin:0}
+.about-panel ul li{margin-bottom:8px;font-size:14px;color:var(--muted);line-height:1.5}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+
+
+
+/* BRAND CATEGORIES */
+.brand-cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+.brand-cat-card{background:var(--ice);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.bcat-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.09em;color:var(--teal);margin-bottom:10px}
+.bcat-brands{display:flex;flex-wrap:wrap;gap:7px}
+.bcat-chip{font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;background:#fff;color:var(--navy);border:1px solid var(--line)}
+
+/* WHAT WE DO GRID */
+.what-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:0}
+.what-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);text-align:center}
+.what-icon{font-size:28px;margin-bottom:10px}
+.what-title{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.what-body{font-size:13px;color:var(--muted);line-height:1.55}
+@media(max-width:760px){.what-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.what-grid{grid-template-columns:1fr}}
+
+/* SKILLS BLOCK */
+.skills-block{margin-top:18px;background:var(--ice);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.skills-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.09em;color:var(--teal);margin-bottom:10px}
+
+
+/* VIDEO EMBED */
+.vid-wrap{margin:6px 0 14px;border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.vid-player{width:100%;display:block;max-height:200px;object-fit:cover}
 
 /* VIDEO PLAY BUTTON */
 .video-play-btn{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:10px;padding:11px 16px;margin:4px 0 14px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .15s}
@@ -221,26 +287,129 @@ section{padding:72px 22px}
 .vp-text{line-height:1}
 
 /* TABS */
-.tab-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;border-bottom:2px solid var(--line);padding-bottom:0}
+.tab-nav{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin-bottom:30px;border-bottom:2px solid var(--line);padding-bottom:0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tab-nav::-webkit-scrollbar{display:none}
 .tab-btn{background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;padding:10px 18px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;border-radius:8px 8px 0 0;transition:color .15s,border-color .15s}
 .tab-btn:hover{color:var(--navy);background:var(--sky)}
 .tab-btn.active{color:var(--blue);border-bottom-color:var(--blue);background:var(--sky)}
-.tab-panel{display:none}
-.tab-panel.active{display:block}
+.tab-panel{display:none !important}
+.tab-panel.active{display:block !important}
 
 footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:var(--muted);font-size:12px}
 
+/* ── TABLET ── */
 @media(max-width:960px){
-  .hero-inner,.contact-wrap,.demo-grid{grid-template-columns:1fr}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-panel{display:none}
+  .hero{padding:60px 18px 48px}
+  .hero h1{font-size:clamp(30px,6vw,46px)}
+  .hero-sub{font-size:16px}
+  .contact-wrap{grid-template-columns:1fr;padding:28px 22px}
+  .demo-grid{grid-template-columns:1fr}
   .outcome-grid{grid-template-columns:1fr 1fr}
-  .hero{padding:68px 18px 56px}
+  .about-grid{grid-template-columns:1fr}
+  .sol-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .cases-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .proof-strip{grid-template-columns:repeat(3,1fr)}
+  .demo-proof{grid-template-columns:repeat(3,1fr)}
 }
+
+/* ── MOBILE ── */
 @media(max-width:640px){
-  .nav-inner{flex-direction:column;align-items:flex-start;gap:10px}
-  .nav-links{justify-content:flex-start;gap:10px}
-  .outcome-grid,.form-row,.demo-proof{grid-template-columns:1fr}
-  section{padding:52px 18px}
-  .contact-wrap{padding:26px 20px}
+  /* Nav */
+  .nav-inner{flex-direction:row;align-items:center;justify-content:space-between;padding:10px 16px;flex-wrap:nowrap}
+  .brand{font-size:18px;font-weight:900}
+  .nav-links{display:none}
+  .nav-mobile-wa{display:flex !important;align-items:center;gap:6px;background:#25d366;color:#fff;font-size:12px;font-weight:800;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+  /* Hero */
+  .hero{padding:48px 16px 40px}
+  .hero h1{font-size:clamp(28px,7.5vw,40px);line-height:1.1;letter-spacing:-0.03em}
+  .hero-sub{font-size:15px;margin-bottom:12px}
+  .hero-copy{font-size:13px;margin-bottom:20px;line-height:1.6}
+  .hero-btns{gap:10px}
+  .btn{padding:11px 16px;font-size:13px}
+  .hero-panel{display:none}
+  .hero-badges{gap:6px}
+  .hbadge{font-size:10px;padding:4px 9px}
+
+  /* Brand strip */
+  .brand-logos{gap:7px 10px}
+  .brand-chip{font-size:11px;padding:5px 12px}
+
+  /* Sections */
+  section{padding:44px 16px}
+  .sec-title{font-size:clamp(22px,5.5vw,30px)}
+  .sec-sub{font-size:14px;margin-bottom:24px}
+  .kicker{font-size:10px}
+
+  /* Problem bar */
+  .problem-bar{grid-template-columns:1fr;gap:12px;padding:16px}
+
+  /* Outcomes */
+  .outcome-grid{grid-template-columns:1fr}
+  .oc-num{font-size:30px}
+  .oc-title{font-size:15px}
+
+  /* Tabs */
+  .tab-nav{gap:6px;margin-bottom:20px}
+  .tab-btn{font-size:12px;padding:8px 10px}
+
+  /* Solution cards */
+  .sol-grid{grid-template-columns:1fr}
+  .sol-card-body h3{font-size:15px}
+  .sol-card-body p{font-size:13px}
+  .impact-list li{font-size:12px}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr}
+  .about-copy{font-size:14px}
+  .about-panel{margin-top:4px}
+
+  /* Proof strip */
+  .proof-strip{grid-template-columns:1fr 1fr;gap:10px}
+  .proof-card strong{font-size:22px}
+  .proof-card span{font-size:11px}
+
+  /* Method */
+  .method-grid{grid-template-columns:1fr}
+
+  /* Demo section */
+  .demo-grid{grid-template-columns:1fr}
+  .demo-copy h2{font-size:clamp(22px,5.5vw,32px)}
+  .demo-copy p{font-size:14px}
+  .demo-points li{font-size:13px}
+  .demo-proof{grid-template-columns:1fr 1fr;gap:8px}
+  .dp-item strong{font-size:17px}
+  .dp-item span{font-size:10px}
+  .form-row{grid-template-columns:1fr}
+  .demo-form-wrap{padding:20px 16px;border-radius:16px}
+  .demo-form-wrap h3{font-size:20px}
+  .form-submit{font-size:14px;padding:13px}
+
+  /* Skills block */
+  .skills-block{padding:12px 14px}
+  .pill{font-size:11px;padding:5px 10px}
+
+  /* Case studies */
+  .cases-grid{grid-template-columns:1fr}
+
+  /* Contact */
+  .contact-wrap{grid-template-columns:1fr;padding:22px 16px;border-radius:16px;gap:24px}
+  .contact-wrap h2{font-size:clamp(22px,5.5vw,30px)}
+  .contact-item{font-size:13px}
+
+  /* Footer */
+  footer{font-size:11px;padding:18px 12px}
+}
+
+/* ── VERY SMALL PHONES ── */
+@media(max-width:380px){
+  .hero h1{font-size:26px}
+  .btn{padding:10px 13px;font-size:12px}
+  .proof-strip{grid-template-columns:1fr}
+  .demo-proof{grid-template-columns:1fr}
+  .tab-btn{font-size:11px;padding:7px 8px}
 }
 </style>
 </head>
@@ -255,14 +424,33 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
 <!-- NAV -->
 <nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
-    <div class="brand">BLD</div>
+    <div class="brand-wrap">
+      <div class="brand">BLD.AI<span class="brand-sub">Retail &amp; AI Division</span></div>
+    </div>
+    <a class="nav-mobile-wa" href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
     <div class="nav-links">
-      <a href="#solutions">Space</a>
-      <a href="#solutions">Inventory</a>
-      <a href="#solutions">Sales</a>
-      <a href="#solutions">Customer</a>
-      <a href="#request-demo">Get Demo</a>
-      <a class="nav-wa" href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank">WhatsApp Us</a>
+      <a href="#about">About Us</a>
+      <div class="nav-dropdown">
+        <a href="#solutions" class="nav-drop-trigger">Solutions ▾</a>
+        <div class="nav-drop-menu">
+          <a href="#solutions" onclick="switchTab('space');return true;">🏪 Space</a>
+          <a href="#solutions" onclick="switchTab('inventory');return true;">📦 Inventory</a>
+          <a href="#solutions" onclick="switchTab('sales');return true;">📈 Sales</a>
+          <a href="#solutions" onclick="switchTab('customer');return true;">👥 Customer</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="#contact" class="nav-drop-trigger">Contact ▾</a>
+        <div class="nav-drop-menu" style="left:auto;right:0">
+          <a href="#request-demo">📋 Request a Demo</a>
+          <a href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank">💬 WhatsApp</a>
+          <a href="tel:+919810689050">📞 Call</a>
+          <a href="mailto:praachee@blueleavesdesign.co.in">✉️ Email</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -272,9 +460,9 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
   <div class="hero-inner">
     <div>
       <div class="eyebrow">AI Retail Transformation &middot; 20 Years Operating Retail</div>
-      <h1>We fix what costs retailers <span>revenue, margin</span> and customers.</h1>
-      <p class="hero-sub">Wrong stock. Late markdowns. Missed retention. Unmeasured campaigns. We build AI systems that stop that leakage, backed by 20 years of operating inside the brands you know.</p>
-      <p class="hero-copy">Adidas &middot; BIBA &middot; Coca Cola &middot; PepsiCo &middot; GSK &middot; Titan &middot; Timex &middot; Tom Tailor &middot; Lavie &middot; Recron</p>
+      <h1>Better Retail Decisions. Powered by AI.<br><span>Grounded in 20+ Years of Retail Experience.</span></h1>
+      <p class="hero-sub">Inventory gaps drain cash. Underperforming space loses margin. Customers leave silently. Campaigns run without measurement. We build AI systems that fix all four, backed by 20 years of operating inside the brands you know.</p>
+
       <div class="hero-btns">
         <a class="btn btn-white" href="#request-demo">Request a Demo</a>
         <a class="btn btn-wa" href="https://wa.me/919810689050?text=Hi%20Praachee%2C%20I%20want%20to%20discuss%20a%20retail%20business%20problem" rel="noopener" target="_blank">
@@ -283,14 +471,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
         </a>
         <a class="btn btn-ghost" href="#solutions">See AI Solutions</a>
       </div>
-      <div class="hero-badges">
-        <span class="hbadge">Inventory Optimisation</span>
-        <span class="hbadge">Customer Retention &amp; CLV</span>
-        <span class="hbadge">Margin Protection</span>
-        <span class="hbadge">Marketing ROI</span>
-        <span class="hbadge">GMROI &amp; Sell-Through</span>
-        <span class="hbadge">AI Automation</span>
-      </div>
+
     </div>
     <aside class="hero-panel" aria-label="Impact snapshot">
       <div class="hero-panel-inner">
@@ -312,7 +493,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
 <!-- BRAND STRIP -->
 <div class="brand-strip">
   <div class="brand-strip-inner">
-    <div class="strip-label">Brands and businesses we have worked with</div>
+    <div class="strip-label">Brands and businesses we have worked with across fashion, FMCG, consumer electronics and lifestyle</div>
     <div class="brand-logos">
       <span class="brand-chip">Adidas</span>
       <span class="brand-chip">BIBA</span>
@@ -323,7 +504,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
       <span class="brand-chip">Timex</span>
       <span class="brand-chip">Tom Tailor</span>
       <span class="brand-chip">Lavie</span>
-      <span class="brand-chip">Recron &middot; RIL</span>
+      <span class="brand-chip">Recron &middot; RIL Group</span>
       <span class="brand-chip">Bira 91</span>
       <span class="brand-chip">Diet Foods</span>
       <span class="brand-chip">Lyla</span>
@@ -334,75 +515,63 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
 </div>
 
 
-<!-- ABOUT -->
+<!-- ABOUT US -->
 <section id="about">
   <div class="section-inner">
-    <p class="kicker">Retail transformation practice</p>
-    <h2 class="sec-title">AI systems built for revenue, margin and customer growth.</h2>
-    <p class="sec-sub">We understand the commercial problem before we build the system. That is what separates retail transformation from retail technology.</p>
+    <p class="kicker">Who We Are</p>
+    <h2 class="sec-title">Built inside retail. Now fixing it with AI.</h2>
+    <p class="sec-sub">Retail AI solutions that improve sales, margin and inventory performance.</p>
     <div class="about-grid">
       <div class="about-copy">
-        <p>Wrong stock, late markdowns, missed retention signals and unmeasured campaigns are where retail businesses lose money every week. We build AI-powered retail analytics and decision systems that stop that leakage, improve inventory efficiency, grow customer lifetime value and make the business measurably more profitable.</p>
-        <p>The advantage here is rare. Twenty years of direct retail operating experience across Adidas, BIBA, Coca Cola, PepsiCo, GSK, Titan and Timex, managing 7,500+ outlets, improving shopper dwell time by 22% and lifting inventory forecasting accuracy by 25%, now combined with machine learning, deep learning, NLP and AI automation.</p>
-        <p>Every week a retail business runs on instinct and delayed reports, it leaves revenue, margin and customer lifetime value behind. We build the AI systems that stop that, with commercial outcomes as the only measure of success.</p>
-        <div class="pill-list">
-          <span class="pill">Python</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Deep Learning</span>
-          <span class="pill">NLP</span>
-          <span class="pill">Tableau</span>
-          <span class="pill">Streamlit</span>
-          <span class="pill">Demand Forecasting</span>
-          <span class="pill">Predictive Analytics</span>
-          <span class="pill">RFM / CLTV</span>
-          <span class="pill">A/B Testing</span>
-          <span class="pill">Generative AI</span>
-          <span class="pill">Responsible AI</span>
-          <span class="pill">Automation</span>
-        </div>
+        <p>BLD.AI is a retail transformation and AI consulting practice that helps retailers solve high-impact commercial problems across inventory, merchandising, space productivity and store execution.</p>
+        <p>We combine over 20 years of retail operating experience with artificial intelligence, machine learning, automation and data analytics to improve demand forecasting and inventory planning, assortment and stock optimisation, space and planogram productivity, visual merchandising compliance, and store execution and performance visibility.</p>
+        <p>Unlike technology providers that understand only data, BLD.AI understands how retail decisions are made at head office, in stores and across the supply chain. Our experience spans fashion, FMCG, consumer electronics and lifestyle retail, with exposure to brands including Adidas, Coca-Cola, PepsiCo, GSK, Titan, Timex, BIBA, Tom Tailor, Lavie, Recron, Bira 91 and Stride by Arvind Brands.</p>
+        <p>BLD.AI builds practical, scalable retail AI solutions designed to reduce revenue leakage, improve margins and enable faster, evidence-based decisions.</p>
       </div>
       <div class="about-panel">
-        <h3>Commercial problems we solve</h3>
+        <h3>Four areas. One goal. Commercial outcomes.</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 14px;line-height:1.5">Commercial problems we solve</p>
         <ul>
-          <li>Wrong stock, excess inventory, deadstock and stockout risk.</li>
-          <li>Late markdowns, weak pricing discipline and margin erosion.</li>
-          <li>Missed churn signals, weak repeat purchase and low CLV.</li>
-          <li>Unmeasured campaigns, poor conversion tracking and wasted spend.</li>
-          <li>Delayed reporting, manual workflows and slow decision cycles.</li>
-          <li>Weak store, SKU, space and category productivity visibility.</li>
+          <li><strong>Inventory:</strong> Wrong stock, excess inventory, deadstock and stockout risk.</li>
+          <li><strong>Space:</strong> Weak shelf productivity, poor planograms and underperforming store space.</li>
+          <li><strong>Customer:</strong> Missed churn signals, weak repeat purchase and low CLV and NPS.</li>
+          <li><strong>Sales:</strong> Delayed reporting, manual workflows, unmeasured campaigns and slow decisions.</li>
         </ul>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- PROBLEMS WE SOLVE -->
+<!-- WHAT WE DO -->
 <section id="problems">
   <div class="section-inner">
-    <p class="kicker">Commercial problems we solve</p>
-    <h2 class="sec-title">Where is your retail business losing money right now?</h2>
-    <p class="sec-sub">Select the problem that fits your business. Every solution below is built around one of these leakage points.</p>
-    <div class="problem-bar">
-      <div class="problem-item">
-        <div class="prob-icon">🏪</div>
-        <div><div class="prob-text">Space Optimisation</div><div class="prob-desc">Shelf productivity, planograms, perishable waste, space that earns its place.</div></div>
+    <p class="kicker">What We Do</p>
+    <h2 class="sec-title">Four areas. One goal. Commercial outcomes.</h2>
+    <p class="sec-sub">Every system we build sits inside one of these four practice areas. Each one targets a specific place where retail businesses lose money.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-icon">🏪</div>
+        <div class="what-title">Space Optimisation</div>
+        <div class="what-body">Shelf productivity, planograms, perishable waste, space that earns its place. Every square foot should generate return.</div>
       </div>
-      <div class="problem-item">
-        <div class="prob-icon">📦</div>
-        <div><div class="prob-text">Inventory Management</div><div class="prob-desc">Wrong stock, stockouts, deadstock, GMROI and replenishment decisions.</div></div>
+      <div class="what-card">
+        <div class="what-icon">📦</div>
+        <div class="what-title">Inventory Management</div>
+        <div class="what-body">Wrong stock, stockouts, deadstock, GMROI and demand forecasting. Right product, right location, right time.</div>
       </div>
-      <div class="problem-item">
-        <div class="prob-icon">📈</div>
-        <div><div class="prob-text">Sales Analysis</div><div class="prob-desc">Why sales dropped, which store, which SKU, which action to take next.</div></div>
+      <div class="what-card">
+        <div class="what-icon">📈</div>
+        <div class="what-title">Sales Analysis</div>
+        <div class="what-body">Why sales dropped, which store, which SKU, which action. Instant answers from data, not week-old spreadsheets.</div>
       </div>
-      <div class="problem-item">
-        <div class="prob-icon">👥</div>
-        <div><div class="prob-text">Customer</div><div class="prob-desc">Churn, CLV, NPS, retention, returns and discount targeting.</div></div>
+      <div class="what-card">
+        <div class="what-icon">👥</div>
+        <div class="what-title">Customer Intelligence</div>
+        <div class="what-body">Churn prediction, CLV, NPS, retention and discount targeting. Keep the customers you worked hard to acquire.</div>
       </div>
     </div>
-
-    <div class="outcome-grid">
+    <div class="outcome-grid" style="margin-top:28px">
       <div class="outcome-card">
         <div class="oc-num green">Revenue+</div>
         <div class="oc-title">Grow revenue and retention</div>
@@ -413,7 +582,11 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
         <div class="oc-title">Reduce cost and manual effort</div>
         <div class="oc-body">Automated workflows cut reporting hours by 40%. Smarter inventory deployment reduced field costs by 15% in live operations.</div>
       </div>
-
+      <div class="outcome-card">
+        <div class="oc-num gold">Margin&uarr;</div>
+        <div class="oc-title">Protect profit and margin</div>
+        <div class="oc-body">Pricing intelligence, markdown optimisation and discount controls that protect gross margin and lift overall profitability.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -421,8 +594,8 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
 <!-- SOLUTIONS: 4 practice areas -->
 <section class="section-soft" id="solutions">
   <div class="section-inner">
-    <p class="kicker">Our four practice areas</p>
-    <h2 class="sec-title">Where we work. What we fix.</h2>
+    <p class="kicker">How We Do It</p>
+    <h2 class="sec-title">AI systems for each area of retail leakage.</h2>
     <p class="sec-sub">Every system we build sits inside one of these four areas. Each one is built to produce a clear commercial action for owners, buyers, category heads and retail teams.</p>
 
     <!-- TAB NAV -->
@@ -454,7 +627,12 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Find space that is costing you money</li>
               <li>Connect shelf position to category sell-through</li>
             </ul>
-            <a class="video-play-btn" href="https://praachee19.github.io/Video/space%20optimiser.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Space Optimiser Demo</span></a>
+            <div class="vid-wrap">
+              <video class="vid-player" controls preload="none" playsinline>
+                <source src="https://praachee19.github.io/Video/space%20optimiser.mp4" type="video/mp4">
+                <p>Your browser does not support video. <a href="https://praachee19.github.io/Video/space%20optimiser.mp4" target="_blank" rel="noopener">Watch here</a></p>
+              </video>
+            </div>
             <div class="sol-btns"><a class="sol-btn primary" href="https://spaceoptimiser.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
@@ -469,7 +647,12 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Protect margin in high-turnover categories</li>
               <li>Identify which SKUs are occupying space without earning it</li>
             </ul>
-            <a class="video-play-btn" href="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Juice Pro Demo</span></a>
+            <div class="vid-wrap">
+              <video class="vid-player" controls preload="none" playsinline>
+                <source src="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" type="video/mp4">
+                <p>Your browser does not support video. <a href="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" target="_blank" rel="noopener">Watch here</a></p>
+              </video>
+            </div>
             <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
@@ -491,7 +674,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
     </div>
 
     <!-- GROUP 2: INVENTORY MANAGEMENT -->
-    <div class="sol-group tab-panel" id="tab-inventory" style="display:none">
+    <div class="sol-group tab-panel" id="tab-inventory">
       <div class="sol-group-header">
         <div class="sol-group-icon">📦</div>
         <div>
@@ -501,18 +684,17 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
       </div>
       <div class="sol-grid">
         <article class="sol-card">
-          <div class="sol-card-top"><span class="tagline">GMROI &middot; Assortment &middot; Category Intelligence</span></div>
+          <div class="sol-card-top"><span class="tagline">Demand Signals &middot; Stockout Risk &middot; Winning &amp; Weak Products</span></div>
           <div class="sol-card-body">
-            <h3>RetailMind AI</h3>
-            <p>Retail intelligence system that shows where stock is creating profit, where it is blocking cash and which assortment actions improve GMROI, sell-through and category performance.</p>
+            <h3>AI Retail Demand Insight Engine</h3>
+            <p>Upload your retail data and get instant demand signals, stockout risk flags, winning and weak product identification and immediate retail actions. Works across region, category and channel filters.</p>
             <ul class="impact-list">
-              <li>Identify low-productivity stock before it becomes deadstock</li>
-              <li>Improve GMROI across categories</li>
-              <li>Support assortment and range planning decisions</li>
-              <li>Show which categories deserve more investment</li>
+              <li>Identifies top selling and weakest products instantly</li>
+              <li>Flags 162+ stockout risk SKUs needing urgent replenishment</li>
+              <li>Surfaces overstock risk for markdown or redistribution action</li>
+              <li>Produces plain English retail actions: replenish, mark down, shift stock</li>
             </ul>
-            <a class="video-play-btn" href="https://Praachee19.github.io/BLD/videos/retail_mind_ai.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch RetailMind AI Demo</span></a>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://demandengineagent.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
@@ -530,20 +712,6 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
           </div>
         </article>
         <article class="sol-card">
-          <div class="sol-card-top"><span class="tagline">Retail Automation &middot; KPI Tracking &middot; Efficiency</span></div>
-          <div class="sol-card-body">
-            <h3>Retail Dashboard Automation</h3>
-            <p>Automated inventory and KPI dashboards with live data feeds. Replaces manual Excel tracking entirely and cuts reporting time by 40%, giving store and buying teams real-time visibility.</p>
-            <ul class="impact-list">
-              <li>Live stock, sell-through and SKU visibility</li>
-              <li>40% reduction in manual reporting time</li>
-              <li>Built for buyers and operations teams</li>
-              <li>Flags inventory anomalies automatically</li>
-            </ul>
-            <div class="sol-btns"><a class="sol-btn primary" href="https://retailsalesautomation.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
-          </div>
-        </article>
-        <article class="sol-card">
           <div class="sol-card-top"><span class="tagline">SKU Rationalisation &middot; Slow Movers &middot; Stock Optimisation</span></div>
           <div class="sol-card-body">
             <h3>Stock Optimisation and SKU Rationalisation</h3>
@@ -557,11 +725,25 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
             <div class="sol-btns"><a class="sol-btn primary" href="https://stock-rationalisation.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">Retail Automation &middot; KPI Tracking &middot; Efficiency</span></div>
+          <div class="sol-card-body">
+            <h3>Retail Dashboard Automation</h3>
+            <p>Automated inventory and KPI dashboards with live data feeds. Replaces manual Excel tracking entirely and cuts reporting time by 40%, giving store and buying teams real-time visibility.</p>
+            <ul class="impact-list">
+              <li>Live stock, sell-through and SKU visibility</li>
+              <li>40% reduction in manual reporting time</li>
+              <li>Built for buyers and operations teams</li>
+              <li>Flags inventory anomalies automatically</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://retailsalesautomation.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
       </div>
     </div>
 
     <!-- GROUP 3: SALES ANALYSIS -->
-    <div class="sol-group tab-panel" id="tab-sales" style="display:none">
+    <div class="sol-group tab-panel" id="tab-sales">
       <div class="sol-group-header">
         <div class="sol-group-icon">📈</div>
         <div>
@@ -570,21 +752,6 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
         </div>
       </div>
       <div class="sol-grid">
-        <article class="sol-card">
-          <div class="sol-card-top"><span class="tagline">Sales Chatbot &middot; Historical Analysis &middot; Actions</span></div>
-          <div class="sol-card-body">
-            <h3>Sales Deep Dive AI</h3>
-            <p>Chat-based sales analysis trained on your data. Ask why sales dropped, which store caused the decline and which category needs action. Answers in plain English, no dashboards, no Excel.</p>
-            <ul class="impact-list">
-              <li>Ask any sales question and get an instant answer</li>
-              <li>Compare store, SKU, category and time periods via chat</li>
-              <li>Turn weekly review meetings into sharp action points</li>
-              <li>Identify which category or store is causing a problem</li>
-            </ul>
-            <a class="video-play-btn" href="https://Praachee19.github.io/BLD/videos/salesdeepdivechat.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Sales Deep Dive Demo</span></a>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
-          </div>
-        </article>
         <article class="sol-card">
           <div class="sol-card-top"><span class="tagline">AI Agent &middot; Plain English &middot; Business Q&amp;A</span></div>
           <div class="sol-card-body">
@@ -596,22 +763,53 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Faster decisions across stores, products and categories</li>
               <li>Available for owners, buyers and store managers</li>
             </ul>
-            <a class="video-play-btn" href="https://praachee19.github.io/Video/retail%20agent.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch RetailAgent Demo</span></a>
+            <div class="vid-wrap">
+              <video class="vid-player" controls preload="none" playsinline>
+                <source src="https://praachee19.github.io/Video/retail%20agent.mp4" type="video/mp4">
+                <p>Your browser does not support video. <a href="https://praachee19.github.io/Video/retail%20agent.mp4" target="_blank" rel="noopener">Watch here</a></p>
+              </video>
+            </div>
             <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
-          <div class="sol-card-top"><span class="tagline">Demand Signals &middot; Stockout Risk &middot; Winning &amp; Weak Products</span></div>
+          <div class="sol-card-top"><span class="tagline">Sales Chatbot &middot; Historical Analysis &middot; Actions</span></div>
           <div class="sol-card-body">
-            <h3>AI Retail Demand Insight Engine</h3>
-            <p>Upload your retail data and get instant demand signals, stockout risk flags, winning and weak product identification and immediate retail actions. Works across region, category and channel filters.</p>
+            <h3>Sales Deep Dive AI</h3>
+            <p>Chat-based sales analysis trained on your data. Ask why sales dropped, which store caused the decline and which category needs action. Answers in plain English, no dashboards, no Excel.</p>
             <ul class="impact-list">
-              <li>Identifies top selling and weakest products instantly</li>
-              <li>Flags 162+ stockout risk SKUs needing urgent replenishment</li>
-              <li>Surfaces overstock risk for markdown or redistribution action</li>
-              <li>Produces plain English retail actions: replenish, mark down, shift stock</li>
+              <li>Ask any sales question and get an instant answer</li>
+              <li>Compare store, SKU, category and time periods via chat</li>
+              <li>Turn weekly review meetings into sharp action points</li>
+              <li>Identify which category or store is causing a problem</li>
             </ul>
-            <div class="sol-btns"><a class="sol-btn primary" href="https://demandengineagent.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+            <div class="vid-wrap">
+              <video class="vid-player" controls preload="none" playsinline>
+                <source src="https://Praachee19.github.io/BLD/videos/salesdeepdivechat.mp4" type="video/mp4">
+                <p>Your browser does not support video. <a href="https://Praachee19.github.io/BLD/videos/salesdeepdivechat.mp4" target="_blank" rel="noopener">Watch here</a></p>
+              </video>
+            </div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">GMROI &middot; Assortment &middot; Category Intelligence</span></div>
+          <div class="sol-card-body">
+            <h3>RetailMind AI</h3>
+            <p>Retail intelligence system that shows where stock is creating profit, where it is blocking cash and which assortment actions improve GMROI, sell-through and category performance.</p>
+            <ul class="impact-list">
+              <li>Identify low-productivity stock before it becomes deadstock</li>
+              <li>Improve GMROI across categories</li>
+              <li>Support assortment and range planning decisions</li>
+              <li>Show which categories deserve more investment</li>
+            </ul>
+            <div class="vid-wrap">
+              <video class="vid-player" controls preload="none" playsinline>
+                <source src="https://Praachee19.github.io/BLD/videos/retail_mind_ai.mp4" type="video/mp4">
+                <p>Your browser does not support video. <a href="https://Praachee19.github.io/BLD/videos/retail_mind_ai.mp4" target="_blank" rel="noopener">Watch here</a></p>
+              </video>
+            </div>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
@@ -625,7 +823,12 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Connect marketing spend to revenue outcomes</li>
               <li>Faster decisions for marketing and growth teams</li>
             </ul>
-            <a class="video-play-btn" href="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Funnel IQ Demo</span></a>
+            <div class="vid-wrap">
+              <video class="vid-player" controls preload="none" playsinline>
+                <source src="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" type="video/mp4">
+                <p>Your browser does not support video. <a href="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" target="_blank" rel="noopener">Watch here</a></p>
+              </video>
+            </div>
             <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
@@ -633,7 +836,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
     </div>
 
     <!-- GROUP 4: CUSTOMER -->
-    <div class="sol-group tab-panel" id="tab-customer" style="display:none">
+    <div class="sol-group tab-panel" id="tab-customer">
       <div class="sol-group-header">
         <div class="sol-group-icon">👥</div>
         <div>
@@ -707,9 +910,48 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
 <!-- PROOF NUMBERS -->
 <section id="proof">
   <div class="section-inner">
-    <p class="kicker">Delivered outcomes</p>
-    <h2 class="sec-title">Numbers from real retail operations.</h2>
-    <p class="sec-sub">Every figure below comes from live retail execution across brands, categories and channels, not projections.</p>
+    <p class="kicker">Who We Have Done It For</p>
+    <h2 class="sec-title">Real results from real retail operations.</h2>
+    <p class="sec-sub">Live retail execution across brands, categories and channels. Not projections.</p>
+
+    <div class="brand-cat-grid">
+      <div class="brand-cat-card">
+        <div class="bcat-label">Fashion &amp; Apparel</div>
+        <div class="bcat-brands">
+          <span class="bcat-chip">Adidas</span>
+          <span class="bcat-chip">BIBA</span>
+          <span class="bcat-chip">Tom Tailor</span>
+          <span class="bcat-chip">Lavie</span>
+          <span class="bcat-chip">Stride &middot; Arvind Brands</span>
+          <span class="bcat-chip">Lyla</span>
+          <span class="bcat-chip">Loom Tree</span>
+        </div>
+      </div>
+      <div class="brand-cat-card">
+        <div class="bcat-label">FMCG &amp; Beverages</div>
+        <div class="bcat-brands">
+          <span class="bcat-chip">Coca-Cola</span>
+          <span class="bcat-chip">PepsiCo</span>
+          <span class="bcat-chip">GSK</span>
+          <span class="bcat-chip">Bira 91</span>
+          <span class="bcat-chip">Diet Foods</span>
+        </div>
+      </div>
+      <div class="brand-cat-card">
+        <div class="bcat-label">Accessories &amp; Watches</div>
+        <div class="bcat-brands">
+          <span class="bcat-chip">Titan</span>
+          <span class="bcat-chip">Timex</span>
+        </div>
+      </div>
+      <div class="brand-cat-card">
+        <div class="bcat-label">Lifestyle &amp; Home</div>
+        <div class="bcat-brands">
+          <span class="bcat-chip">Recron &middot; RIL</span>
+        </div>
+      </div>
+    </div>
+
     <div class="proof-strip">
       <div class="proof-card"><strong>7,500+</strong><span>Retail touchpoints managed across national execution programs</span></div>
       <div class="proof-card"><strong>95%</strong><span>Brand compliance achieved vs 85 to 90% industry benchmark</span></div>
@@ -771,6 +1013,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
           <div class="dp-item"><strong>7,500+</strong><span>Retail touchpoints handled across rollouts</span></div>
           <div class="dp-item"><strong>15 AI systems</strong><span>Built for retail decisions, not dashboards</span></div>
         </div>
+
       </div>
       <div class="demo-form-wrap">
         <div class="form-kicker">Start here</div>
@@ -874,12 +1117,38 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
   </div>
 </section>
 
+<!-- TOOLS WE USE -->
+<section class="section-soft" id="tools">
+  <div class="section-inner">
+    <p class="kicker">Built With</p>
+    <h2 class="sec-title">The tools behind every system we build.</h2>
+    <div class="pill-list" style="margin-top:18px">
+      <span class="pill">Python</span>
+      <span class="pill">SQL</span>
+      <span class="pill">Machine Learning</span>
+      <span class="pill">Deep Learning</span>
+      <span class="pill">NLP</span>
+      <span class="pill">Tableau</span>
+      <span class="pill">Streamlit</span>
+      <span class="pill">Demand Forecasting</span>
+      <span class="pill">Predictive Analytics</span>
+      <span class="pill">RFM / CLTV</span>
+      <span class="pill">A/B Testing</span>
+      <span class="pill">Generative AI</span>
+      <span class="pill">Responsible AI</span>
+      <span class="pill">Automation</span>
+      <span class="pill">Snowflake</span>
+      <span class="pill">Alteryx</span>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <div class="contact-wrap">
       <div>
-        <h2>Have a retail or business problem worth solving with AI?</h2>
+        <h2>Talk to us about your retail problem.</h2>
         <p>Send the business problem, current data sources and the decision you want to improve. We will convert it into a practical AI solution, dashboard, model or alert system.</p>
       </div>
       <div class="contact-list">
@@ -907,17 +1176,27 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
 
 <script>
 // Tab switching
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){
+    b.classList.remove('active');
+    b.setAttribute('aria-selected','false');
+  });
+  document.querySelectorAll('.tab-panel').forEach(function(p){
+    p.classList.remove('active');
+    p.style.removeProperty('display');
+  });
+  var btn = document.querySelector('[data-tab="'+tabId+'"]');
+  var panel = document.getElementById('tab-'+tabId);
+  if(btn){ btn.classList.add('active'); btn.setAttribute('aria-selected','true'); }
+  if(panel){ panel.classList.add('active'); }
+}
 document.querySelectorAll('.tab-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var tab=btn.getAttribute('data-tab');
-    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
-    document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';p.classList.remove('active')});
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected','true');
-    var panel=document.getElementById('tab-'+tab);
-    if(panel){panel.style.display='block';panel.classList.add('active')}
+  btn.addEventListener('click', function(){
+    switchTab(btn.getAttribute('data-tab'));
   });
 });
+// Init: ensure space tab is visible on load
+switchTab('space');
 
 document.querySelectorAll('a[href="#request-demo"]').forEach(function(link){
   link.addEventListener('click',function(){
