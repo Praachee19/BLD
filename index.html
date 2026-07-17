@@ -200,6 +200,13 @@ section{padding:72px 22px}
 .wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 .wa-float:hover .wa-tooltip{opacity:1}
 
+
+/* VIDEO PLAY BUTTON */
+.video-play-btn{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:10px;padding:11px 16px;margin:4px 0 14px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .15s}
+.video-play-btn:hover{opacity:.88}
+.vp-icon{font-size:18px;line-height:1}
+.vp-text{line-height:1}
+
 /* TABS */
 .tab-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;border-bottom:2px solid var(--line);padding-bottom:0}
 .tab-btn{background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;padding:10px 18px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;border-radius:8px 8px 0 0;transition:color .15s,border-color .15s}
@@ -308,7 +315,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
       <span class="brand-chip">Diet Foods</span>
       <span class="brand-chip">Lyla</span>
       <span class="brand-chip">Loom Tree</span>
-      <span class="brand-chip">Stride &middot; Arvind</span>
+      <span class="brand-chip">Stride &middot; Arvind Brands</span>
     </div>
   </div>
 </div>
@@ -349,11 +356,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
         <div class="oc-title">Reduce cost and manual effort</div>
         <div class="oc-body">Automated workflows cut reporting hours by 40%. Smarter inventory deployment reduced field costs by 15% in live operations.</div>
       </div>
-      <div class="outcome-card">
-        <div class="oc-num gold">Margin&uarr;</div>
-        <div class="oc-title">Protect profit and margin</div>
-        <div class="oc-body">Pricing intelligence, markdown optimisation and discount controls that protect gross margin and lift overall profitability.</div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -394,7 +397,7 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Find space that is costing you money</li>
               <li>Connect shelf position to category sell-through</li>
             </ul>
-            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/space%20optimiser.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
+            <a class="video-play-btn" href="https://praachee19.github.io/Video/space%20optimiser.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Space Optimiser Demo</span></a>
             <div class="sol-btns"><a class="sol-btn primary" href="https://spaceoptimiser.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
@@ -409,8 +412,8 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Protect margin in high-turnover categories</li>
               <li>Identify which SKUs are occupying space without earning it</li>
             </ul>
-            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+            <a class="video-play-btn" href="https://praachee19.github.io/Video/juice_shelf_optimizer.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Juice Pro Demo</span></a>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
@@ -451,8 +454,8 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Support assortment and range planning decisions</li>
               <li>Show which categories deserve more investment</li>
             </ul>
-            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/retail_mind_ai.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/retail_mind_ai.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+            <a class="video-play-btn" href="https://Praachee19.github.io/BLD/videos/retail_mind_ai.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch RetailMind AI Demo</span></a>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
@@ -483,6 +486,20 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
             <div class="sol-btns"><a class="sol-btn primary" href="https://retailsalesautomation.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
+        <article class="sol-card">
+          <div class="sol-card-top"><span class="tagline">SKU Rationalisation &middot; Slow Movers &middot; Stock Optimisation</span></div>
+          <div class="sol-card-body">
+            <h3>Stock Optimisation and SKU Rationalisation</h3>
+            <p>Identifies slow-moving and non-contributing SKUs that are locking cash and occupying space. Gives category teams a clear action list: delist, mark down, reposition or redistribute before stock becomes a write-off.</p>
+            <ul class="impact-list">
+              <li>Surface slow movers by category, region and channel</li>
+              <li>Identify which SKUs to delist vs reposition</li>
+              <li>Free up open-to-buy budget tied in dead stock</li>
+              <li>Improve overall range productivity and GMROI</li>
+            </ul>
+            <div class="sol-btns"><a class="sol-btn primary" href="https://stock-rationalisation.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
+          </div>
+        </article>
       </div>
     </div>
 
@@ -507,8 +524,8 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Turn weekly review meetings into sharp action points</li>
               <li>Identify which category or store is causing a problem</li>
             </ul>
-            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/sales_deep_dive_ai.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/sales_deep_dive_ai.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+            <a class="video-play-btn" href="https://Praachee19.github.io/BLD/videos/salesdeepdivechat.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Sales Deep Dive Demo</span></a>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
@@ -522,20 +539,20 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Faster decisions across stores, products and categories</li>
               <li>Available for owners, buyers and store managers</li>
             </ul>
-            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/retail%20agent.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/retail%20agent.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+            <a class="video-play-btn" href="https://praachee19.github.io/Video/retail%20agent.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch RetailAgent Demo</span></a>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
         <article class="sol-card">
-          <div class="sol-card-top"><span class="tagline">KPI Narrative &middot; Risk Flags &middot; Exec Summaries</span></div>
+          <div class="sol-card-top"><span class="tagline">Demand Signals &middot; Stockout Risk &middot; Winning &amp; Weak Products</span></div>
           <div class="sol-card-body">
-            <h3>Insight Engine</h3>
-            <p>AI-powered KPI interpreter that reads business metrics and produces plain English insights, risk flags and decision recommendations. Reduces the time leadership spends interpreting data every week.</p>
+            <h3>AI Retail Demand Insight Engine</h3>
+            <p>Upload your retail data and get instant demand signals, stockout risk flags, winning and weak product identification and immediate retail actions. Works across region, category and channel filters.</p>
             <ul class="impact-list">
-              <li>Converts KPI movement into clear action summaries</li>
-              <li>Flags risks before they become commercial problems</li>
-              <li>Reduces weekly review time for leadership teams</li>
-              <li>Built for owners and category heads, not analysts</li>
+              <li>Identifies top selling and weakest products instantly</li>
+              <li>Flags 162+ stockout risk SKUs needing urgent replenishment</li>
+              <li>Surfaces overstock risk for markdown or redistribution action</li>
+              <li>Produces plain English retail actions: replenish, mark down, shift stock</li>
             </ul>
             <div class="sol-btns"><a class="sol-btn primary" href="https://demandengineagent.streamlit.app/" target="_blank" rel="noopener">Open Live App</a><a class="sol-btn" href="#request-demo">Request Demo</a></div>
           </div>
@@ -551,8 +568,8 @@ footer{text-align:center;padding:22px 12px;border-top:1px solid #e5edf7;color:va
               <li>Connect marketing spend to revenue outcomes</li>
               <li>Faster decisions for marketing and growth teams</li>
             </ul>
-            <div class="video-box"><video controls preload="metadata" playsinline><source src="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" type="video/mp4"/>Your browser does not support video.</video></div>
-            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a><a class="sol-btn" href="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" target="_blank" rel="noopener">Watch Video</a></div>
+            <a class="video-play-btn" href="https://praachee19.github.io/Video/Marketing%20Analytic%20dashboard.mp4" target="_blank" rel="noopener"><span class="vp-icon">&#9654;</span><span class="vp-text">Watch Funnel IQ Demo</span></a>
+            <div class="sol-btns"><a class="sol-btn primary" href="#request-demo">Request Demo</a></div>
           </div>
         </article>
       </div>
@@ -859,4 +876,3 @@ document.querySelectorAll('a[href="#request-demo"]').forEach(function(link){
 </script>
 </body>
 </html>
-
